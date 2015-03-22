@@ -1,0 +1,17 @@
+<h1>Add a new book to one of the existing libraries!</h1>
+
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <br>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br>
+  <br>
+  <%= f.label :library_id, "Pick a library" %>
+  <%= f.collection_select(:library_id, Library.all, :id, :name) %>
+  <br>
+  <br>
+  <%= f.submit "Add this book" %>
+<% end %>

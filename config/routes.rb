@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :books, only: [:new]
+  resources :libraries, only: [:show]
+  resources :books, only: [:new, :create]
 
 end
